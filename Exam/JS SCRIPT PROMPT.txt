@@ -1,0 +1,43 @@
+Create fully automated Cisco Packet Tracer JavaScript (.js) scripts for all tasks in the attached lab manual, assignment, or provided instructions.
+Use my attached working .js script as a reference for the scripting structure and native IPC API.
+Compatibility
+My Cisco Packet Tracer version is [INSERT EXACT VERSION].
+Scripts must be compatible with this specific version and its native JavaScript IPC API.
+Use only functions supported by my Packet Tracer version.
+Requirements
+Use Cisco Packet Tracer's built-in PT Script Module (Extensions → Scripting → Script Engine).
+Use native JavaScript and ipc APIs only.
+No PTBuilder, external extensions, or dependencies.
+Automatically create all required devices, arrange the topology, and connect cables.
+Configure IP addresses, gateways, routers, switches, routing protocols, network services, and all other task-specific requirements wherever supported.
+Use correct device-type IDs, device models, cable IDs, interface names, and IPC methods compatible with my version.
+Follow the scripting approach demonstrated in my working reference file.
+Include main(), cleanUp(), and basic dprint() error logging.
+Do not invent unsupported IPC methods.
+Save the completed topology as .pkt where supported.
+Output
+Generate a separate, complete .js file for each task.
+Provide downloadable files and a ZIP containing all scripts.
+Scripts must run directly through Packet Tracer's built-in Script Engine without additional extensions.
+Clearly identify any configuration that cannot be automated using the native API.
+Check JavaScript syntax and ensure compatibility with my specified Packet Tracer version.
+Goal
+I should only need to:
+Open Cisco Packet Tracer.
+Create a blank project and select Realtime mode.
+Import the .js script into the built-in PT Script Module.
+Click Start.
+Have the required network topology automatically created and configured.
+Save the completed .pkt file.
+Do not provide CLI-only scripts, pseudocode, or lengthy explanations. Generate actual executable JavaScript files using the native Packet Tracer scripting API, following my attached reference script and targeting my exact Packet Tracer version.
+
+
+Goal
+I should only need to:
+Open Cisco Packet Tracer.
+Create a blank project and select Realtime mode.
+Import the .js script into the built-in PT Script Module.
+Click Start.
+Have the required network topology automatically created and configured.
+Save the completed .pkt file.
+Do not provide CLI-only scripts, pseudocode, or lengthy explanations. Generate actual executable JavaScript files using the native Packet Tracer scripting API, following my attached reference script and targeting my exact Packet Tracer version.
