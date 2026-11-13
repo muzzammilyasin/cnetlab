@@ -1,0 +1,37 @@
+USE CLAUDE FOR THIS PROMPT
+
+Generate complete Cisco Packet Tracer .pkt files using Python for the scenario below. Target Windows Packet Tracer 8.2.1. Deliver finished files, not just scripts or instructions. Do not require me to supply a seed file.
+Previous failures and the method that worked
+Earlier generated files first failed to open and later crashed Packet Tracer with “Cisco Packet Tracer has stopped working unexpectedly.”
+The successful recovery used:
+A native 8.2.0.0162 document structure, which the user confirmed opens in 8.2.1.
+Older device structures rather than the generator’s default 9.x templates.
+Preservation of native document options and physical-workspace structure.
+No added labels or saved simulation PDU records.
+Explicit interface configuration stanzas instead of interface range.
+The exact crash-triggering field was not identified. These are the changes in the working build, not individually proven crash causes.
+Python implementation
+Use packet-tracer-pkt-format==0.4.1 (pkt_core) for decoding, building and encoding. Do not use its default Lab() document/templates, which target 9.0.1.
+Use a compatible native document and device definitions:
+The successful document, PC, server and 2960 switch data came from the 8.2.0 file 232414_EmailServer.pkt in: https://github.com/Jawadyyy/cisco-pkt-tracer-labs
+Hub and laptop data came from 7.3.1 files start topology.pkt and LAN.pkt in: https://github.com/Ashiq3/Network-Design-in-Cisco-packet-tracer
+A 2911 router definition came from the actual 8.2.1 file CNProject.pkt in: https://github.com/chmuhammadasim/Computer-Networking-Project-Packet-Tracer
+If available, prefer the attached successfully opened recovery file as the compatibility reference.
+Initialize Lab(seed=compatible_document_bytes, models=compatible_device_definitions), remove inherited devices using prune_seed_devices(), and build the requested network.
+Required precautions
+Do not “backport” by changing the VERSION field.
+Preserve native XML sections and physical hierarchy; avoid unnecessary schema changes.
+Omit the writer’s 9.x ORIGINAL_DEVICE_UUID extension.
+Ensure unique device IDs/MACs, valid physical UUID paths, existing endpoint ports and no duplicate port connections.
+Use correct straight-through/crossover cabling.
+Replace inherited configurations and accounts with the scenario’s settings.
+Configure every requested service completely, including matching SMTP/POP3 server accounts and each client’s email settings.
+For DHCP, configure pools, masks, DNS and gateways correctly; keep server addresses outside the pools.
+Keep STP enabled where Ethernet links form loops. Flag any necessary topology adjustment, especially closed hub rings.
+Delivery and verification
+Provide separate final .pkt files for separate tasks, plus short credentials and test steps. Add a combined file only if requested.
+Check encoding round-trip, references, ports, addressing and service configuration. These checks do not prove Packet Tracer can open the file. State clearly whether native opening, ping and email delivery were actually tested.
+Work directly and efficiently with minimal narration. Avoid unrelated research and cosmetic additions.
+Scenario
+[Paste the lab requirements here]
+use version 8.2.1
